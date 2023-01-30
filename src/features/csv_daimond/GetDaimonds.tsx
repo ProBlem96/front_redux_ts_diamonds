@@ -41,7 +41,7 @@ const ConDaimonds = () => {
   return (
     <div>
 
-       <h4>all daimonds<br></br> search byspecific color, update by carat and Delete</h4>
+       <h4>all daimonds<br></br> search by specific color, update by carat and Delete</h4>
 
       <input placeholder='search daimond by color..' onChange={(e) => setsearch(e.target.value)} />
       <br></br>
@@ -53,16 +53,16 @@ const ConDaimonds = () => {
       {daimonds.filter(daim => daim.color.includes(search)).map((daim, i) => <div key={i}>
         
 
-        id : {daim.ID}
-        carat: {daim.carat},
-        clarity:  {daim.clarity},
-        color : {daim.color},
-        cut :{daim.cut},<br></br>
-        depth :{daim.depth},
-        price :{daim.price},
-        table :{daim.table},
-        x :{daim.x},
-        y :{daim.y},
+        id : {daim.ID} {"  "}
+        carat: {daim.carat},{"  "}
+        clarity:  {daim.clarity},{"  "}
+        color : {daim.color},{"  "}
+        cut :{daim.cut},<br></br>{"  "}
+        depth :{daim.depth},{"  "}
+        price :{daim.price},{"  "}
+        table :{daim.table},{"  "}
+        x :{daim.x},{"  "}
+        y :{daim.y},{"  "}
         z :{daim.z}<br></br>
         <button onClick={() => dispatch(delDaimondAsync(daim.ID || -1))}>Delete</button>
         <button onClick={() => upd_daimond(

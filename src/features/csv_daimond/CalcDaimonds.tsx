@@ -40,47 +40,46 @@ export function CalcDaimonds() {
     return (
         <div>
   
-            <h3>Diamonds calculating</h3> <br></br>
+            <h4>Daimonds calc</h4> <br/>
 
-            <button onClick={() => dispatch(getMaxAsync())}>show max price </button>
+            <button onClick={() => dispatch(getMaxAsync())}>present max price </button>
 
             {max.map((max, i) => <div key={i}>{max}</div>)}
-            <br></br>
-            <br></br>
+            <br/><br/>
+            
 
-            <button onClick={() => dispatch(getMeanAsync())}>show average price</button>
+            <button onClick={() => dispatch(getMeanAsync())}>present average price</button>
 
             {mean.map((mean, i) => <div key={i}>{mean}</div>)}
-            <br></br>
-            <br></br>
+            <br/><br/>
+            
 
-            <button onClick={() => dispatch(getAvgCutAsync())}>show average carat by each cut</button>
+            <button onClick={() => dispatch(getAvgCutAsync())}>present average carat by each cut</button>
 
             {avgCut.map((avgCut, i) => <div key={i}>{avgCut}</div>)}
-            <br></br>
-            <br></br>
+            <br/><br/>
+            
 
-            <button onClick={() => dispatch(getIdealAsync())}>show ideal type quantity</button>
+            <button onClick={() => dispatch(getIdealAsync())}>present ideal type quantity</button>
 
             {ideal.map((idal, i) => <div key={i}>{idal}</div>)}
-            <br></br>
-            <br></br>
+            <br/><br/>
+            
 
-            <button onClick={() => dispatch(getPremiumAsync())}>show median carat of premium</button>
+            <button onClick={() => dispatch(getPremiumAsync())}>present median carat of premium</button>
 
             {premium.map((premium, i) => <div key={i}>{premium}</div>)}
-            <br></br>
-            <br></br>
+            <br/><br/>
+            
 
             <button onClick={() => dispatch(getPriceAvgAsync())}>
-            show average price
-            <br></br>
+            present average price<br/>
             of each type of color
             </button>
 
             {avg_price.map((avg_price, i) => <div key={i}>{avg_price}</div>)}
-            <br></br>
-            <br></br>
+            <br/><br/>
+            
 
             <hr></hr>
 

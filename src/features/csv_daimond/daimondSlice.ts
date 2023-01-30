@@ -66,6 +66,7 @@ export const getMaxAsync = createAsyncThunk(
     'daimond/getMax',
     async () => {
         const response = await getMax();
+        console.log(response.data)
         return response.data;
     }
 );
@@ -97,9 +98,8 @@ export const getPriceAvgAsync = createAsyncThunk(
 export const updDaimondAsync = createAsyncThunk(
     'daimond/updDaimond',
     async (new_daimond: Daimond) => {
-         console.log({new_daimond})
+        //  console.log({new_daimond})
         const response = await updDaimond(new_daimond);
-        console.log(response.data.carat)
         return response.data;
     }
 );
@@ -131,9 +131,9 @@ export const daimondSlice = createSlice({
         builder
             .addCase(getDaimondsAsync.fulfilled, (state, action) => {
                 state.daimonds = action.payload;
-
             })
             .addCase(getAvgCutAsync.fulfilled, (state, action) => {
+                console.log(action)
                 state.avg_cut = action.payload;
             })
             .addCase(getIdealAsync.fulfilled, (state, action) => {
@@ -147,17 +147,16 @@ export const daimondSlice = createSlice({
             })
             .addCase(getPremiumAsync.fulfilled, (state, action) => {
                 state.premium = action.payload;
+                state.updateFlag =! state.updateFlag;
+                
             })
             .addCase(getPriceAvgAsync.fulfilled, (state, action) => {
                 state.price_avg = action.payload;
             })
 
             .addCase(addDaimondAsync.fulfilled, (state, action) => {
-                console.log(action.payload)
+                // console.log(action.payload)
                   state.daimonds.push( action.payload);
-                
-
-
                 state.updateFlag =! state.updateFlag;
             })
             .addCase(delDaimondAsync.fulfilled, (state, action) => {
